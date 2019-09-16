@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="40%" class="bg">
+  <ion-list>
+    <ion-item>
+      <ion-label floating class ="login">Username</ion-label>
+      <ion-input type ="text"[(ngModel)]="username" id = input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type = "password"[(ngModel)]="pwd" id = password></ion-input>
+    </ion-item>
+  </ion-list>
+  <div align="center">
+    <button ion-button (click)="LoginIn()">Log-In</button>
+    <hr>
+    <button ion-button (click)="signup()">Sign-Up</button>
+  </div>
+<!--  <div>-->
+<!--    <ion-list>-->
+<!--      <ion-item>-->
+<!--        <ion-label floating>SearchContent</ion-label>-->
+<!--        <ion-input type = "text"[(ngModel)]="searchWord" id = searchWord></ion-input>-->
+<!--      </ion-item>-->
+<!--    </ion-list>-->
+<!--    <button ion-button (click)="getKnowledgeGraph()">Search</button>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <ion-list>-->
+<!--      <ion-item>-->
+<!--        <ion-label floating>Images</ion-label>-->
+<!--        <ion-input type = "text"[(ngModel)]="searchImg" id = searchImg></ion-input>-->
+<!--      </ion-item>-->
+<!--    </ion-list>-->
+<!--    <button ion-button (click)="getSearchedImages()">SearchImage</button>-->
+<!--  </div>-->
+
+</ion-content>

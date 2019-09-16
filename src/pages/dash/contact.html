@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Search Application
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg">
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Knowledge Search</ion-label>
+        <ion-input type = "text"[(ngModel)]="searchWord" id = searchWord></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button (click)="getKnowledgeGraph()">Search</button>
+  </div>
+
+  <div class="panel panel-default" *ngIf="searchName != null" >
+    <div class="panel-heading" style="color:white;"><b>Knowledge Results:</b></div>
+    <div class="panel-body">
+      <div class="list-group-item clearfix">
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">Name: {{ searchName }}</h4>
+          <h4 class="list-group-item-heading">Description: {{ searchdesc }}g</h4>
+          <h4 class="list-group-item-heading">URL: {{ searchUrl }}g</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Images</ion-label>
+        <ion-input type = "text"[(ngModel)]="searchImg" id = searchImg></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button (click)="getSearchedImages()">SearchImage</button>
+  </div>
+
+  <div class="panel panel-default" *ngIf="ImageBoo!=null">
+    <div class="panel-heading" style="color:white"><b>Search Results for {{searchImg}}:</b></div>
+    <div class="panel-body">
+
+      <div *ngFor="let search of searchData" class="list-group-item clearfix">
+        <div class="pull-left">
+          <h5 class="list-group-item-heading">{{ search.name }}</h5>
+        </div>
+
+        <span class="pull-right">
+               <img src="{{ search.link }}" width="50" height="50">
+      </span>
+
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>
